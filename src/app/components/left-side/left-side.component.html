@@ -1,0 +1,21 @@
+<div class="">
+    <span class="header">Baskı Editörü</span>
+    <div class="card custom-card mt-3">
+      <div class="card-body">
+        <input 
+          class="form-control" 
+          type="text" 
+          (input)="sendTextToRightSide()" 
+          [(ngModel)]="text" 
+          [style.font-size.px]="fontSize" 
+          [ngStyle]="{'font-weight': isBold ? 'bold' : 'normal', 'font-style': isItalic ? 'italic' : 'normal' }"
+        >
+        <div class="editor-container mt-3">
+          <div class="grid-background"></div>
+          <div class="content-area">
+            <img *ngIf="selectedImage" [src]="selectedImage" alt="Loaded Image" class="img-fluid"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

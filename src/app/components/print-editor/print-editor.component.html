@@ -1,0 +1,11 @@
+<div class="container">
+
+    <div class="row mt-3">
+        <div class="col-6">
+            <app-left-side [fontSize]="fontSize" [isBold]="isBold" [isItalic]="isItalic"></app-left-side>
+        </div>
+        <div class="col-6">
+            <app-right-side (fontSizeChange)="onFontSizeChange($event)" (boldToggle)="onBoldToggle($event)" (italicToggle)="onItalicToggle($event)"></app-right-side>
+        </div>
+    </div>
+</div>

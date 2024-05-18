@@ -1,0 +1,85 @@
+<div class="">
+    <span class="header">Baskı Editörü</span>
+
+    <div class="row">
+        <label for="dropdown">Paper Option</label>
+        <select class="col-3" id="dropdown" [(ngModel)]="selectedDropdownValue">
+            <option *ngFor="let item of dropdownOgeList" [value]="item.value">{{ item.text }}</option>
+        </select>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col">
+            <label class="x-y" >X</label>
+            <input type="number" id="widthInput" class="form-control">
+        </div>
+        <div class="col">
+            <label class="x-y" for="heightInput">Y</label>
+            <input type="number" id="heightInput" class="form-control">
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col d-flex gap">
+            <button type="button" class="btn btn-primary" (click)="selectText()">Text</button>
+            <button type="button" class="btn btn-primary" (click)="selectImage()">Image</button>
+        </div>
+    </div>
+
+    <ng-container *ngIf="selectedOption === 'text'">
+        <div class="row mt-3">
+            <div class="col">
+                <label for="domainInput">Domain:</label>
+                <input type="text" id="domainInput" class="form-control">
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <label for="fontInput">Font:</label>
+                <select id="fontInput" class="form-control">
+                </select>
+            </div>
+            <div class="row mt-3">
+                <div class="col">
+                    <label>
+                        Font Size:
+                        <input type="number" (input)="changeFontSize($event)" />
+                      </label>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <div class="row mt-3">
+                    <div class="col">
+                        <label>Other Settings:</label>
+                        <button type="button" class="btn btn-link" (click)="toggleBold()">
+                            <i class="fas fa-bold"></i>
+                          </button>
+                          <button type="button" class="btn btn-link" (click)="toggleItalic()">
+                            <i class="fas fa-italic"></i>
+                          </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="selectedOption === 'image'">
+        <div class="card custom-card mt-3">
+            <div class="card-body">
+              <input 
+                type="file" 
+                (change)="onFileSelected($event)"
+                (click)="sendImage()"
+                
+              >
+            </div>
+          </div>
+    </ng-container>
+</div>
+
+<button type="button" class="btn btn-primary mt-3" (click)="sendData()">Gönder</button>
+
+
+

@@ -1,0 +1,42 @@
+.header {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+ .editor-container {
+  position: relative;
+  width: 100%;
+  height: 500px; 
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.grid-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, #ccc 1px, transparent 1px), 
+                    linear-gradient(to bottom, #ccc 1px, transparent 1px);
+  background-size: 20px 20px; 
+  pointer-events: none; 
+}
+
+.content-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  background: transparent;
+  z-index: 1;
+  overflow-y: auto;
+  font-size: 14px; 
+}
+
+.content-area img {
+  max-width: 100%;
+  height: auto;
+}
