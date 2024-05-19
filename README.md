@@ -1,3 +1,5 @@
+## npm install yaptıktan sona ng serve ile ayağa kaldırabilirsiniz
+
 # BaskiEditoru
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
